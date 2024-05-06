@@ -18,13 +18,13 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
-public class ViewRegionRewardsGui extends RGui {
+public class RegionRewardsViewGui extends RGui {
 
     private Player player;
     private Region region;
     private final PaginatedGui gui;
 
-    public ViewRegionRewardsGui() {
+    public RegionRewardsViewGui() {
         gui = Gui.paginated()
                 .title(Component.text("All Region Rewards"))
                 .rows(5)

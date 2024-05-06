@@ -9,13 +9,13 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-public class RegionRewardGui extends RGui {
+public class RegionEventsGui extends RGui {
 
     private Player player;
     private final Gui gui;
     private Region region;
 
-    public RegionRewardGui() {
+    public RegionEventsGui() {
         gui = Gui.gui()
                 .title(Component.text("Region rewards"))
                 .rows(3)
@@ -43,21 +43,21 @@ public class RegionRewardGui extends RGui {
     @Override
     public void setupItems() {
         GuiItem newReward = ItemBuilder.from(Material.COMPARATOR)
-                .setName("§aAdd new reward")
-                .setLore("§fCreate a new afk reward for the region")
-                .asGuiItem(event -> new RegionRewardCreateGui().open(player, region.getId()));
+                .setName("§aAdd new action")
+                .setLore("§fCreate new enter/leave action for the region")
+                .asGuiItem(event -> new RegionEventActionCreateGui().open(player, region.getId()));
 
         GuiItem viewReward = ItemBuilder.from(Material.ENDER_PEARL)
-                .setName("§aView rewards")
-                .setLore("§fView all the current rewards for the region")
-                .asGuiItem(event -> new RegionRewardsViewGui().open(player, region.getId()));
+                .setName("§aView actions")
+                .setLore("§fView the current actions of the region")
+                .asGuiItem(event -> new RegionEventViewGui().open(player, region.getId()));
 
         gui.setItem(2, 4, newReward);
         gui.setItem(2, 6, viewReward);
 
         GuiItem filler = ItemBuilder.from(Material.GRAY_STAINED_GLASS_PANE)
-                    .setName(" ")
-                    .asGuiItem();
+                .setName(" ")
+                .asGuiItem();
 
         gui.getFiller().fill(filler);
     }

@@ -80,7 +80,7 @@ public class RegionEditorGui extends RGui {
         GuiItem eventActions = ItemBuilder.from(Material.REDSTONE)
                         .setName("§aEvent Actions")
                         .setLore("§fSet the leave/enter actions for the region")
-                        .asGuiItem(event -> new RegionEventActionCreateGui().open(player, region.getId()));
+                        .asGuiItem(event -> new RegionEventsGui().open(player, region.getId()));
 
         gui.setItem(2, 2, tp);
         gui.setItem(2, 4, rename);
