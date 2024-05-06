@@ -1,0 +1,15 @@
+local-db: true # If false fill in the details below
+
+remote-db:
+  username: root
+  password: password
+  db: database
+  host: localhost
+  port: 3306
+
+preferences:
+  region-visualizer: true # If true, when holding out the region select wand, an outline will appear
+
+wand:
+  name: '&6Selector'
+  material: 'STICK'

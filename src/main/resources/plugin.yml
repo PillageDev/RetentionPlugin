@@ -1,0 +1,4 @@
+name: Retention
+version: '${project.version}'
+main: dev.pillage.retention.Retention
+api-version: 1.14
